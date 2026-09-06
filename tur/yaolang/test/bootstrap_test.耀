@@ -1,0 +1,55 @@
+## ═══════════════════════════════════════════════════════════════════════════
+## 曜语自举级功能测试
+## 文件: bootstrap_test.耀
+## 测试: 字符串操作, 文件I/O, 数学函数
+## ═══════════════════════════════════════════════════════════════════════════
+
+函数 主函数() {
+    _yao_print_s("=== 自举级功能测试 ===")
+
+    ## ── 字符串长度 ──
+    变量 s: 文本 = "Hello, 曜语!"
+    变量 len: 整数 = _yao_strlen(s)
+    _yao_print_s("字符串长度:")
+    _yao_print(len)
+
+    ## ── 字符串拼接 ──
+    变量 a: 文本 = "曜语"
+    变量 b: 文本 = "万岁"
+    变量 cat: 文本 = _yao_strcat(a, b)
+    _yao_print_s("拼接结果:")
+    _yao_print_s(cat)
+
+    ## ── 整数转字符串 ──
+    变量 num: 整数 = 42
+    变量 s_num: 文本 = _yao_itoa(num)
+    _yao_print_s("整数转文本:")
+    _yao_print_s(s_num)
+
+    ## ── 数学测试 ──
+    变量 pi: 浮点 = 3.14159
+    变量 sin_val: 浮点 = _yao_sin_d(pi)
+    _yao_print_s("sin(π):")
+    _yao_print_d(sin_val)
+
+    变量 max_val: 整数 = _yao_max(100, 200)
+    _yao_print_s("max(100,200):")
+    _yao_print(max_val)
+
+    ## ── 文件写入 ──
+    变量 ok: 整数 = _yao_write_file("/tmp/yao_test.txt", "曜语文件写入测试!\nHello from YaoLang!\n")
+    _yao_print_s("文件写入结果:")
+    _yao_print(ok)
+
+    ## ── 文件读取 ──
+    变量 content: 文本 = _yao_read_file("/tmp/yao_test.txt")
+    _yao_print_s("文件读取结果:")
+    _yao_print_s(content)
+
+    ## ── 文件存在检查 ──
+    变量 exists: 整数 = _yao_file_exists("/tmp/yao_test.txt")
+    _yao_print_s("文件存在:")
+    _yao_print(exists)
+
+    _yao_print_s("=== 自举级测试通过 ===")
+}
